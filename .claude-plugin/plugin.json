@@ -1,0 +1,16 @@
+{
+  "name": "engineering-skills",
+  "version": "0.1.0",
+  "description": "Mechanical and thermal-fluid engineering skills for research, proposals, and technical writing.",
+  "author": {
+    "name": "Alex Valeyev",
+    "email": "alex@radengineer.com"
+  },
+  "keywords": [
+    "mechanical-engineering",
+    "thermal-fluids",
+    "research",
+    "proposals"
+  ],
+  "skills": "./skills/"
+}

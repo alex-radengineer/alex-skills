@@ -1,0 +1,15 @@
+{
+  "name": "alex-skills",
+  "owner": {
+    "name": "Alex Valeyev",
+    "email": "alex@radengineer.com"
+  },
+  "plugins": [
+    {
+      "name": "engineering-skills",
+      "source": "./",
+      "description": "Mechanical and thermal-fluid engineering skills for research, proposals, and technical writing.",
+      "version": "0.1.0"
+    }
+  ]
+}
