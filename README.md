@@ -6,29 +6,41 @@ My Claude skills, kept in git so I can version them, diff them, and roll one bac
 This repo doubles as a plugin marketplace. Everything in it is markdown — no hooks, no MCP
 servers, no scripts. Nothing here executes.
 
+Two installs, because Cowork and Claude Code track plugins separately. Same repo for both.
+
+## Install in Cowork
+
+Account-scoped, so do it once and every machine you sign into picks it up. All clicking, no
+terminal.
+
+1. Claude desktop app, left sidebar, **Customize**
+2. **Plugins** → **Add marketplace**
+3. Enter `alex-radengineer/alex-skills` and confirm
+4. **Install** on the `engineering-skills` entry
+
+Updating: Customize → Plugins, find the `alex-skills` marketplace, click **Update**. Nothing
+auto-updates; pull it after a push.
+
 ## Install in Claude Code
 
+Per machine, unlike Cowork.
+
 ```bash
-claude plugin marketplace add alex-radengineer/alex-skills
+claude plugin marketplace add https://github.com/alex-radengineer/alex-skills.git
 ```
 
 ```bash
 claude plugin install engineering-skills@alex-skills
 ```
 
+Use the full `.git` URL. The `owner/repo` shorthand clones over SSH and dies on any machine
+without keys loaded in `ssh-agent`. Choose **User scope** when prompted, otherwise the plugin
+is tied to a single project.
+
+`engineering-skills@alex-skills` is `plugin-name@marketplace-name`; the marketplace name comes
+from `.claude-plugin/marketplace.json`, not from the GitHub repo name.
+
 Pull later changes with `/plugin marketplace update`.
-
-## Install in Cowork
-
-Cowork doesn't read git marketplaces; it takes a `.plugin` file instead. Build one from the
-repo root:
-
-```bash
-zip -r /tmp/engineering-skills.plugin . -x '*.git*' '*.DS_Store' && open /tmp
-```
-
-Drop the resulting file into a Cowork chat and accept it. Repeat after any update — there's
-no automatic path here yet.
 
 ## Skills
 
